@@ -9,9 +9,11 @@ pipeline {
             }
         }
         stage('Nice to meet you') {
-            whatILove = 'learning CI/CD with Jenkins pipeline'
             steps {
+		script{
+            	whatILove = 'learning CI/CD with Jenkins pipeline'
                 sh 'echo "I love ${whatILove}!, and this is from stage environment variable!"'
+                }
             }
         }
     }
